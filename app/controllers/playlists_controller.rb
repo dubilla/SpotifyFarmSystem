@@ -4,5 +4,7 @@ class PlaylistsController < ApplicationController
     hash = spotify_user.to_hash
     spotify_user = RSpotify::User.new(hash)
     @playlists = spotify_user.playlists
+
+    render json: @playlists
   end
 end
