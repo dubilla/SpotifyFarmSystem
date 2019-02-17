@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: "home#show"
 
   resources :playlists, only: [:index]
-  get '/auth/spotify/callback', to: 'playlists#index'
+  get '/auth/spotify/callback', to: redirect('playlists')
 end
